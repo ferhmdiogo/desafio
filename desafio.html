@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Peso</title>
+    <script>
+        function calcular(){
+            let peso = document.getElementById("txtPeso").value;
+            if(peso === ""){
+                alert("Favor, informar peso");
+                return;
+            }
+            
+            let altura = document.getElementById("txtAltura").value;
+            if(altura === ""){
+                alert("Favor, informar altura");
+                return;
+            }
+            let imc = Number(peso) / Number(altura)**2;
+            if(imc < 18.5 ){
+                alert("Magreza, IMC = "+imc);
+				alert("Cuidado, pois podem incorrer de algumas doenças aparecer")
+            } else if (imc < 24.9 ){
+                alert("Normal, IMC = "+imc);
+            } else if (imc < 30 ){
+                alert("Sobrepeso, IMC = "+imc);
+				alert("Cuidado, pois podem incorrer de algumas doenças aparecer")
+            } else {
+                alert("Obesidade, IMC = "+imc);
+				alert("Cuidado, pois podem incorrer de algumas doenças aparecer")
+            }           
+        } 
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Informe peso: </td>
+            <td><input type="text" name="txtPeso" placeholder="Peso" id="txtPeso"> </td>
+        </tr>
+        <tr>
+            <td>Informe altura: </td>
+            <td><input type="text" name="txtAltura" placeholder="Altura" id="txtAltura"> </td>
+        </tr>
+        <tr>
+            <td colspan="2" > <input type="button" value="Calcular" onclick="calcular()"> </td>
+        </tr>
+    </table>
+    
+
+</body>
+</html>
